@@ -1,6 +1,5 @@
 #!/bin/bash
-set -e
-set -v
+set -ev
 
 # Initialize variables
 app_name=test-app
