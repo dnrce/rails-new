@@ -11,5 +11,5 @@ shopt -s dotglob
 mv $app_name/* .
 rmdir $app_name
 git add .
-git commit -m '`rails new $app_name`'
+git commit -m "New Rails $version app \"$app_name\""
 git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/railsnew.git $branch 2>&1 | grep -v https
