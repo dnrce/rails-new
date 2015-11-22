@@ -7,8 +7,8 @@ gem install rails -v $version
 git checkout --orphan $branch
 git rm -rf .
 rails new $app_name
+shopt -s dotglob
 mv $app_name/* .
-mv $app_name/.* .
 rmdir $app_name
 git add .
 git commit -m '`rails new $app_name`'
