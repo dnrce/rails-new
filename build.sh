@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 version=$(echo $release_link | grep -oE '[^\/]+$')
 branch=v$version
 gem install rails -v $version
