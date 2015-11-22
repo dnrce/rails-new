@@ -12,5 +12,4 @@ mv $app_name/.* .
 rmdir $app_name
 git add .
 git commit -m '`rails new $app_name`'
-git remote set-url --push origin https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/railsnew.git
-git push origin $branch
+git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/railsnew.git $branch 2>&1 | grep -v https
