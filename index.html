@@ -17,6 +17,16 @@ layout: default
       </li>
     {% endfor %}
   </ul>
+  
+  <ul>
+    {% for repository in site.github.public_repositories %}
+      <li><a href="{{ repository.html_url }}">{{ repository.name }}</a></li>
+    {% endfor %}
+  </ul>
+  
+  {% for release in site.github.releases %}
+    * {{ release.tag_name }}
+  {% endfor %}
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
