@@ -23,4 +23,4 @@ rmdir $app_name
 git add .
 git commit -m "New Rails $version app \"$app_name\""
 git tag $version
-git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/railsnew.git $branch 2>&1 | grep -v https
+git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/rails-new.git $branch 2>&1 | grep -v https
