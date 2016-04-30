@@ -4,14 +4,14 @@ set -ev
 # Initialize variables
 app_name=test-app
 version=$(echo $release_link | grep -oE '[^\/]+$')
-branch=v$version
+branch=$(echo $version | grep -oE '^[0-9]+\.[0-9]+')
+
+# Checkout existing branch and empty it, or create an empty branch
+git checkout -b $branch || git checkout --orphan $branch
+GLOBIGNORE=.:..:.git ; git rm -r *
 
 # Install Rails
 gem install rails -v $version
-
-# Create an empty branch
-git checkout --orphan $branch
-git rm -rf .
 
 # Create a new Rails app in the repository root
 rails new $app_name
