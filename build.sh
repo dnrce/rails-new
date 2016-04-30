@@ -14,7 +14,7 @@ GLOBIGNORE=.:..:.git ; git rm -r *
 gem install rails -v $version
 
 # Create a new Rails app in the repository root
-rails new $app_name
+rails new $app_name --skip-bundle
 shopt -s dotglob
 mv $app_name/* .
 rmdir $app_name
