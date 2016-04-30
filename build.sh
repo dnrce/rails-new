@@ -7,7 +7,7 @@ version=$(echo $release_link | grep -oE '[^\/]+$')
 branch=$(echo $version | grep -oE '^[0-9]+\.[0-9]+')
 
 # Checkout existing branch and empty it, or create an empty branch
-git checkout $branch || git checkout --orphan $branch
+(git fetch origin $branch && git checkout $branch) || git checkout --orphan $branch
 GLOBIGNORE=.:..:.git ; git rm -r *
 
 # Install Rails
