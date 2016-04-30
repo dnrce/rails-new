@@ -8,7 +8,7 @@ branch=$(echo $version | grep -oE '^[0-9]+\.[0-9]+')
 
 # Checkout existing branch and empty it, or create an empty branch
 (git fetch origin $branch && git checkout -b $branch FETCH_HEAD) || git checkout --orphan $branch
-GLOBIGNORE=.:..:.git ; git rm -r *
+GLOBIGNORE=.:..:.git ; git rm -rf *
 
 # Install Rails
 gem install rails -v $version
