@@ -1,6 +1,9 @@
 #!/bin/bash
 set -ev
 
+# Work on the master branch
+git checkout master
+
 # Determine version from build parameters
 version=$(echo $release_link | grep -oE '[^\/]+$')
 
