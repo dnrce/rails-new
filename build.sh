@@ -14,4 +14,4 @@ mv rails-new $version
 # Commit and push
 git add $version
 git commit -m "Rails $version"
-git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/rails-new.git 2>&1 | grep -v https
+git push https://$GITHUB_USER:$GITHUB_TOKEN@github.com/dnrce/rails-new.git master 2>&1 | grep -v https
